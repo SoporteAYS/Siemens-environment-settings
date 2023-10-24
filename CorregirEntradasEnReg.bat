@@ -1,4 +1,4 @@
-@echo off
+echo off
 chcp 65001 > nul 2>&1
 color 0A  
 
@@ -15,21 +15,19 @@ echo.
 REM Establecer valores
 set "RegistroBase=HKCU\SOFTWARE\Siemens_PLM_Software"
 REM Establecer valor del servidor de licencias (Solo nombre)
-set "NombreServidor=Aqui Nombre del Servidor"
+set "NombreServidor=NombreServidor"
 
 REM Asignar puerto por defecto
 set "Puerto=29000"
 
 REM Asignar paquetes por defecto separados por  punto y coma ;
-REM Ejemplos:
 REM SCACAD100	Simcenter 3D Academic Bundle
 REM ACD11		NX Academic - CAE & CAM
 REM ACD10		NX Academic - Core & CAD
-
-set "IDBundle=SCACAD100"
+set "IDBundle=ACD11;ACD10;"
 
 echo.
-echo Creando la estructura en el Registro...
+echo       Creando la estructura en el Registro...
 echo.
 
 REM Crear la estructura en el registro
@@ -48,8 +46,10 @@ if errorlevel 1 (
     echo Error: No se pudo crear la estructura en el Registro.
 ) else (
     echo.
-    echo La estructura en el Registro ha sido creada con éxito.
+    echo       La estructura en el Registro ha sido creada con éxito.
 )
+
+echo.
 echo.
 echo.
 echo.
